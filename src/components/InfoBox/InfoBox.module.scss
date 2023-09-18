@@ -1,0 +1,10 @@
+.InfoBox {
+  width: 200px;
+  background-color: white;
+  border-radius: 4px;
+  position: relative;
+
+  & table {
+    padding: 8px;
+  }
+}
