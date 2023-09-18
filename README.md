@@ -27,6 +27,6 @@ In the project directory, you can run:
 The app is run in development mode.\
 Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
 
-### `npm test`
+### `npm run test`
 
-Automated testing is a work in progress.
+A few automated test cases have been prepared. Script can be run to get outcome of test cases.

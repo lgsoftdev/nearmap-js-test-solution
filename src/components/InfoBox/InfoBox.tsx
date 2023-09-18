@@ -1,6 +1,6 @@
 import { infoBoxProps } from '../../types';
 import TableRow from './TableRow';
-import { GetTextLabel } from '../../utils';
+import { GetTextLabel } from '../../utils/helper';
 import styles from './InfoBox.module.scss';
 
 const InfoBox = ({ locInfo, infoBoxPosition }: infoBoxProps) => {

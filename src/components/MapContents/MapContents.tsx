@@ -3,7 +3,7 @@ import { ILocInfo } from '../../types';
 import LocationMarker from '../LocationMarker/LocationMarker';
 import InfoBox from '../InfoBox/InfoBox';
 import BackgroundMap from '../../assets/images/background-map.jpg';
-import styles from './MapContents.module.scss';
+import styles from '../../utils/styles.module.scss';
 
 const MapContents = (props: {
   locInfoArray: ILocInfo[];
