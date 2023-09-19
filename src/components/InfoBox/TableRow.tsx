@@ -1,4 +1,4 @@
-const TableRow = (props: { label: string; value: string | number }) => {
+const TableRow = (props: { label: string; value: string }) => {
   return (
     <tr>
       <td>

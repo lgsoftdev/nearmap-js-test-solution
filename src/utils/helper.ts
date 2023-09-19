@@ -4,6 +4,10 @@ export function GetTextLabel(label: string) {
   return label.charAt(0).toUpperCase() + label.slice(1);
 }
 
+export function FormatDisplayValue(value: string | number | object) {
+  return Array.isArray(value) ? '[' + value.join() + ']' : (value as string);
+}
+
 export const locationsTestArray: ILocInfo[] = [
   {
     id: 1,

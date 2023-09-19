@@ -1,6 +1,6 @@
 import { infoBoxProps } from '../../types';
 import TableRow from './TableRow';
-import { GetTextLabel } from '../../utils/helper';
+import { FormatDisplayValue, GetTextLabel } from '../../utils/helper';
 import styles from './InfoBox.module.scss';
 
 const InfoBox = ({ locInfo, infoBoxPosition }: infoBoxProps) => {
@@ -23,7 +23,7 @@ const InfoBox = ({ locInfo, infoBoxPosition }: infoBoxProps) => {
                   <TableRow
                     key={index}
                     label={GetTextLabel(attribute)}
-                    value={value}
+                    value={FormatDisplayValue(value)}
                   />
                 )
             )}
