@@ -24,7 +24,7 @@ const MapContents = (props: {
   };
 
   return (
-    <div className={styles.pos_fixed}>
+    <div className={styles.pos_relative}>
       <img
         className={styles.pos_absolute}
         src={BackgroundMap}
@@ -40,14 +40,12 @@ const MapContents = (props: {
           onLocationClick={handleLocationClick}
         />
       ))}
-      <InfoBox
-        locInfo={
-          selectedLocation !== null
-            ? props.locInfoArray[selectedLocation]
-            : ({} as ILocInfo)
-        }
-        infoBoxPosition={props.infoBoxPosition}
-      />
+      {selectedLocation !== null && (
+        <InfoBox
+          locInfo={props.locInfoArray[selectedLocation]}
+          infoBoxPosition={props.infoBoxPosition}
+        />
+      )}
     </div>
   );
 };

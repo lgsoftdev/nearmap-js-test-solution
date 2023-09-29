@@ -14,16 +14,14 @@ const LocationMarker = (props: {
 
   return (
     <img
-      className={styles.pos_relative}
+      className={styles.pos_absolute}
       style={{
         left: props.position[0],
         top: props.position[1],
       }}
       src={props.selectedLocation === props.id ? MarkerSelected : Marker}
       alt={
-        props.selectedLocation === props.id
-          ? 'location active'
-          : 'location inactive'
+        props.selectedLocation === props.id ? 'location selected' : 'location'
       }
       onClick={handleLocationClick}
     />
