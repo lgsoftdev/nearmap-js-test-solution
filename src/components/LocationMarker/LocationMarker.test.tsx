@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import LocationMarker from './LocationMarker';
 import { locationsTestArray } from '../../utils/helper';
 import { ILocInfo } from '../../types';
@@ -7,7 +6,7 @@ import { ILocInfo } from '../../types';
 const locInfo: ILocInfo = locationsTestArray[1];
 
 describe('Location Component', () => {
-  test('renders a grey coloured location marker at initial load ', () => {
+  test('renders a grey coloured location marker when there is currently no selected location, ie selectedLocation=null ', () => {
     render(
       <LocationMarker
         id={locInfo['id']}
@@ -17,10 +16,10 @@ describe('Location Component', () => {
       />
     );
     const imgElement = screen.getByRole('img');
-    expect(imgElement.getAttribute('alt')).toEqual('location inactive');
+    expect(imgElement.getAttribute('src')).not.toContain('selected');
   });
 
-  test('renders a red coloured location marker when marker is clicked for the first time ', async () => {
+  test('renders a red coloured location marker when currently selected location is the same as the location marker being rendered, ie id=selectedLocation ', async () => {
     render(
       <LocationMarker
         id={locInfo['id']}
@@ -30,8 +29,6 @@ describe('Location Component', () => {
       />
     );
     const imgElement = screen.getByRole('img');
-    await userEvent.click(imgElement);
-    const imgElementClicked = screen.getByRole('img');
-    expect(imgElementClicked.getAttribute('alt')).toEqual('location active');
+    expect(imgElement.getAttribute('alt')).toContain('selected');
   });
 });

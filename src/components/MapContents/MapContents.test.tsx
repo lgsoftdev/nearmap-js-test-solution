@@ -33,7 +33,7 @@ describe('MapContents Component', () => {
     //There should be one red location marker.
     const imgElementsAfterClick = screen.getAllByRole('img');
     expect(imgElementsAfterClick[index].getAttribute('alt')).toEqual(
-      'location active'
+      'location selected'
     );
 
     //There should be a display of location details when a marker is clicked.
